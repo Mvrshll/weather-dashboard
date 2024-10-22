@@ -121,3 +121,42 @@ body {
   background: rgba(255, 255, 255, 0.2);
   color: #333;
 }
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fall {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-fall {
+  animation: fall 2s ease-in-out infinite;
+}
+
+.animate-flash {
+  animation: flash 1s ease-in-out infinite;
+}

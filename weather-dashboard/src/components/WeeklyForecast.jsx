@@ -6,13 +6,13 @@ function WeeklyForecast({ forecast, darkMode }) {
 
   const getWeatherIcon = (condition) => {
     switch (condition.toLowerCase()) {
-      case 'clear': return <WiDaySunny className="w-10 h-10 text-yellow-400" />;
-      case 'clouds': return <WiCloudy className="w-10 h-10 text-gray-400" />;
-      case 'rain': return <WiRain className="w-10 h-10 text-blue-400" />;
-      case 'snow': return <WiSnow className="w-10 h-10 text-white" />;
-      case 'thunderstorm': return <WiThunderstorm className="w-10 h-10 text-yellow-600" />;
-      case 'mist': case 'fog': case 'haze': return <WiFog className="w-10 h-10 text-gray-300" />;
-      default: return <WiDaySunny className="w-10 h-10 text-yellow-400" />;
+      case 'clear': return <WiDaySunny className="w-10 h-10 text-yellow-400 animate-spin-slow" />;
+      case 'clouds': return <WiCloudy className="w-10 h-10 text-gray-400 animate-pulse" />;
+      case 'rain': return <WiRain className="w-10 h-10 text-blue-400 animate-bounce" />;
+      case 'snow': return <WiSnow className="w-10 h-10 text-white animate-fall" />;
+      case 'thunderstorm': return <WiThunderstorm className="w-10 h-10 text-yellow-600 animate-flash" />;
+      case 'mist': case 'fog': case 'haze': return <WiFog className="w-10 h-10 text-gray-300 animate-pilse" />;
+      default: return <WiDaySunny className="w-10 h-10 text-yellow-400 animate-spin-slow" />;
     }
   };
 
