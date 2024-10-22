@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.weather-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.weather-bg::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.weather-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Weather background images */
+.weather-clear {
+  background-image: url('https://images.unsplash.com/photo-1601297183305-6df142704ea2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
+
+.weather-clouds {
+  background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
+}
+
+.weather-rain {
+  background-image: url('https://images.unsplash.com/photo-1518803194621-27188ba362c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
+
+.weather-snow {
+  background-image: url('https://images.unsplash.com/photo-1516431883744-f077ead1002b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
+
+.weather-thunderstorm {
+  background-image: url('https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
+}
+
+.weather-mist {
+  background-image: url('https://images.unsplash.com/photo-1487621167305-5d248087c724?ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80');
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode adjustments */
+.dark .glass {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.text-shadow {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.dark .text-white {
+  color: #f0f4f8;
+}
+
+.dark .text-gray-200 {
+  color: #cbd5e0;
+}
+
+.dark .bg-blue-500 {
+  background-color: #3182ce;
+}
+
+.dark .hover\:bg-blue-600:hover {
+  background-color: #2c5282;
+}
+
+/* Light theme styles */
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  color: #333;
+}
